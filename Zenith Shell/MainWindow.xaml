@@ -5,26 +5,17 @@
     xmlns:models="using:Zenith_Shell.Models"
     Title="Zenith Shell">
 
-    <Grid Padding="16" RowSpacing="12">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <!-- Menú lateral tipo Store -->
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-        <TextBox
-            Grid.Row="0"
-            PlaceholderText="Buscar apps..."
-            Text="{x:Bind ViewModel.Query, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-
-        <ListView
-            Grid.Row="1"
-            ItemsSource="{x:Bind ViewModel.Results, Mode=OneWay}"
-            SelectedItem="{x:Bind ViewModel.SelectedApp, Mode=TwoWay}">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="models:AppEntry">
-                    <TextBlock Text="{x:Bind Name}" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <!-- Aquí iría tu NavigationView o menú personalizado -->
+        <NavigationView x:Name="MainNav" Grid.Column="0" Grid.ColumnSpan="2" PaneDisplayMode="LeftCompact" IsBackButtonVisible="Collapsed" MenuItemsSource="{x:Bind ...}">
+            <!-- Frame principal donde cargaremos HomePage -->
+            <Frame x:Name="ContentFrame" />
+        </NavigationView>
     </Grid>
 </Window>

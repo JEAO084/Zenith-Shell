@@ -10,6 +10,7 @@ public sealed partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        _ = ViewModel.InitializeAsync();
+        // Navegamos al inicio por defecto
+        ContentFrame.Navigate(typeof(Views.HomePage));
     }
 }
