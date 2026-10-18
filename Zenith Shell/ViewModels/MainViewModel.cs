@@ -7,6 +7,10 @@ namespace Zenith_Shell.ViewModels;
 
 public sealed partial class MainViewModel : ViewModelBase // <--- Agregado 'partial'
 {
+
+
+
+
     private readonly IAppSearchService _searchService;
 
     private string _query = string.Empty;

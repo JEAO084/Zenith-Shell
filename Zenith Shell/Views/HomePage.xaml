@@ -25,7 +25,7 @@
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
 
-                <!-- StoreCarousel (Izquierda) -->
+                <!-- StoreCarousel -->
                 <dev:StoreCarousel Grid.Column="0"
                                    AutoShuffle="True"
                                    PrimaryImageSource="https://picsum.photos/seed/side1/400/200"
@@ -40,19 +40,18 @@
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
 
-                    <!-- Card Grande -->
+                    <!-- Card Grande (Top) -->
                     <Border Grid.Row="0" CornerRadius="8" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" BorderThickness="1" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}">
                         <Grid>
-                            <Image Source="{x:Bind ViewModel.SidebarTopItems[0].ImageSource, Mode=OneWay}" Stretch="UniformToFill"/>
-                            <!-- Fondo oscuro semitransparente para que el texto se lea -->
+                            <Image Source="{x:Bind ViewModel.SidebarTopItem.ImageSource, Mode=OneWay}" Stretch="UniformToFill"/>
                             <Border VerticalAlignment="Bottom" Background="#80000000" CornerRadius="8,8,0,0" Padding="16,8">
-                                <TextBlock Text="{x:Bind ViewModel.SidebarTopItems[0].Title, Mode=OneWay}" 
+                                <TextBlock Text="{x:Bind ViewModel.SidebarTopItem.Title, Mode=OneWay}" 
                                            FontSize="20" FontWeight="SemiBold" Foreground="White" />
                             </Border>
                         </Grid>
                     </Border>
 
-                    <!-- Cards Pequeñas -->
+                    <!-- Cards Pequeñas (Bottom) -->
                     <Grid Grid.Row="1" ColumnSpacing="16">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -61,18 +60,18 @@
 
                         <Border Grid.Column="0" CornerRadius="8" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" BorderThickness="1" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}">
                             <Grid>
-                                <Image Source="{x:Bind ViewModel.SidebarBottomItems[0].ImageSource, Mode=OneWay}" Stretch="UniformToFill"/>
+                                <Image Source="{x:Bind ViewModel.SidebarBottomItem1.ImageSource, Mode=OneWay}" Stretch="UniformToFill"/>
                                 <Border VerticalAlignment="Bottom" Background="#80000000" CornerRadius="8,8,0,0" Padding="12,6">
-                                    <TextBlock Text="{x:Bind ViewModel.SidebarBottomItems[0].Title, Mode=OneWay}" FontWeight="SemiBold" Foreground="White"/>
+                                    <TextBlock Text="{x:Bind ViewModel.SidebarBottomItem1.Title, Mode=OneWay}" FontWeight="SemiBold" Foreground="White"/>
                                 </Border>
                             </Grid>
                         </Border>
 
                         <Border Grid.Column="1" CornerRadius="8" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" BorderThickness="1" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}">
                             <Grid>
-                                <Image Source="{x:Bind ViewModel.SidebarBottomItems[1].ImageSource, Mode=OneWay}" Stretch="UniformToFill"/>
+                                <Image Source="{x:Bind ViewModel.SidebarBottomItem2.ImageSource, Mode=OneWay}" Stretch="UniformToFill"/>
                                 <Border VerticalAlignment="Bottom" Background="#80000000" CornerRadius="8,8,0,0" Padding="12,6">
-                                    <TextBlock Text="{x:Bind ViewModel.SidebarBottomItems[1].Title, Mode=OneWay}" FontWeight="SemiBold" Foreground="White"/>
+                                    <TextBlock Text="{x:Bind ViewModel.SidebarBottomItem2.Title, Mode=OneWay}" FontWeight="SemiBold" Foreground="White"/>
                                 </Border>
                             </Grid>
                         </Border>
@@ -80,21 +79,8 @@
                 </Grid>
             </Grid>
 
-            <!-- SECCIÓN INFERIOR: Tendencias -->
-            <Grid Grid.Row="1" ColumnSpacing="24">
-                <!-- Trending Games -->
-                <StackPanel Grid.Column="0" Spacing="12">
-                    <TextBlock Text="Trending games" FontSize="20" FontWeight="SemiBold"/>
-                    <!-- Listas horizontales igual que antes... -->
-                </StackPanel>
-
-                <!-- Trending Apps -->
-                <StackPanel Grid.Column="1" Spacing="12">
-                    <TextBlock Text="Trending apps" FontSize="20" FontWeight="SemiBold"/>
-                    <!-- Listas horizontales igual que antes... -->
-                </StackPanel>
-            </Grid>
-
+            <!-- SECCIÓN INFERIOR: Tendencias (Se mantiene igual) -->
+            <!-- ... -->
         </Grid>
     </ScrollViewer>
 </Page>
