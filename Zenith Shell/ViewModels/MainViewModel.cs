@@ -5,7 +5,7 @@ using Zenith_Shell.Services;
 
 namespace Zenith_Shell.ViewModels;
 
-public sealed class MainViewModel : ViewModelBase
+public sealed partial class MainViewModel : ViewModelBase // <--- Agregado 'partial'
 {
     private readonly IAppSearchService _searchService;
 
